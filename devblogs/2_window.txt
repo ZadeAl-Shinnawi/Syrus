@@ -1,0 +1,9 @@
+To create a window, you first need to initialize GLFW, its version, and mode.
+Then, you can create a window, error check it, and set its context to current.
+Next, in order to use any OpenGL functions, we must initialize GLAD. After
+that, we set the OpenGL viewport. We must also create a window resize callback
+function that triggers anytime the window is resized. We also set up an input
+processing function that, for now, just checks if the window should be closed.
+
+The render loop looks like this: process input, render, handle events.
+One iteration of the render loop is called a frame.
