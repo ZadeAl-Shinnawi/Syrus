@@ -149,6 +149,7 @@
   <ItemGroup>
     <Text Include="devblogs\2_window.txt" />
     <Text Include="devblogs\1_glfw_glad_cmake.txt" />
+    <Text Include="devblogs\3_triangle.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\glad.c" />

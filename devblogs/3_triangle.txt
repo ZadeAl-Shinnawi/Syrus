@@ -1,0 +1,56 @@
+The graphics pipeline is the entire process of transforming 3D coordinates to
+2D pixels on your screen. The input to the graphics pipeline is 3D coordinates
+and the output is colored 2D pixels. This process is broken up into several
+smaller ones. Since these are highly specialized (i.e. only perform a single
+function), they can be executed in parallel. Therefore, modern GPUs have
+thousands of cores which run small programs on the GPU for each step of the
+graphics pipeline. These small programs are called shaders and are written in
+GLSL. Each step is described briefly below.
+
+1. Vertex Shader
+- Input: 3D coordinates (array of vertex data)
+	Each vertex is a collection of data (vertex attributes) per 3D coordinate
+	An example of some vertex attributes may be 3D position and a color value
+- i.e. (x = 1, y = 2, z = 3), (r = 255, g = 255, b = 0)
+
+2. Primitive/Shape Assembly
+- Input: Vertices or vertex
+- Purpose: Assemble the given points in the specified primitive shape, like a
+triangle
+
+3. Geometry Shader
+- Input: A collection of vertices that form a primitive
+- Purpose: Generate other shapes by emitting new vertices to form new or other
+	primitives
+- i.e. generating a second triangle out of the first triangle
+
+4. Rasterization
+Maps everything inside the primitive to pixels to pass to the fragment shader
+
+4.5: Clipping occurs here to remove any fragments outside of the viewport
+A fragment is all required data for OGL to render a pixel
+
+5. Fragment Shader
+All of the pixel color data is performed here.
+
+6. Alpha Test & Blending Stage
+Checks if fragments are in front of or behind others.
+
+A vertex and fragment shader are required in OGL.
+
+OGL 3D coordinates are within "normalized device coordinate" range,
+(-1.0f to 1.0f). The origin is in the center of the viewport.
+
+To send our vertex data to the GPU, we must create memory on the GPU, configure
+how OGL should interpret it, and how to send to send the data. This is done
+with a Vertex Buffer Object (VBO).
+
+A VBO is an OGL object, which means it need a unique ID.
+
+*SUMMARY*
+
+VBO - Buffer of vertex data.
+
+VAO - Bundles VBO, EBO, attribute information into one state for ease-of-use.
+
+EBO - Holds indices into vertex data.
