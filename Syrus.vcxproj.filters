@@ -18,6 +18,7 @@
     <Text Include="devblogs\1_glfw_glad_cmake.txt" />
     <Text Include="devblogs\2_window.txt" />
     <Text Include="devblogs\3_triangle.txt" />
+    <Text Include="devblogs\4_shaders.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -26,5 +27,17 @@
     <ClCompile Include="src\glad.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\shader.vs" />
+    <None Include="src\shader.fs" />
   </ItemGroup>
 </Project>

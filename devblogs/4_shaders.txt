@@ -1,0 +1,19 @@
+Shaders have input and output data (in and out). Vertex shaders specify input
+vertex data with "layout (location = 0)". The fragment shader must define a
+vec4 output color. We can specify an output in a sending shader (say a vertex
+shader) and an input with the same name in the receiving shader (fragment
+shader) to pass data between shaders. This passing of data is performed
+when linking the shader program object.
+
+So, we can send a value from the vertex shader to the fragment shader. We can
+also pass a value from our program/application to the fragment shader. This is
+done via uniforms, which are another way to pass data from our application on
+the CPU to the shaders on the GPU. Uniforms are global, meaning that they are
+unique per shader program object and can be accessed by any shader at any
+stage. We must first get the location of the uniform by querying our shader
+program and then set it inside of our application.
+
+Uniforms are good for setting attributes that change every frame and for
+passing data between our application and shaders. However, sometimes we
+want to set a color for each vertex. To do this, we can add mode vertex
+attributes.
