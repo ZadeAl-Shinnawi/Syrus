@@ -17,3 +17,5 @@ Uniforms are good for setting attributes that change every frame and for
 passing data between our application and shaders. However, sometimes we
 want to set a color for each vertex. To do this, we can add mode vertex
 attributes.
+
+I also created a shader class and organized my VBO, VAO, and EBO code.

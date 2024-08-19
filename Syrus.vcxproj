@@ -72,19 +72,19 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LibraryPath>C:\dev\Syrus\vendor\lib;$(LibraryPath)</LibraryPath>
-    <IncludePath>C:\dev\Syrus\vendor\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\dev\Syrus\vendor\include;C:\dev\Syrus\src;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LibraryPath>C:\dev\Syrus\vendor\lib;$(LibraryPath)</LibraryPath>
-    <IncludePath>C:\dev\Syrus\vendor\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\dev\Syrus\vendor\include;C:\dev\Syrus\src;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LibraryPath>C:\dev\Syrus\vendor\lib;$(LibraryPath)</LibraryPath>
-    <IncludePath>C:\dev\Syrus\vendor\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\dev\Syrus\vendor\include;C:\dev\Syrus\src;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LibraryPath>C:\dev\Syrus\vendor\lib;$(LibraryPath)</LibraryPath>
-    <IncludePath>C:\dev\Syrus\vendor\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\dev\Syrus\vendor\include;C:\dev\Syrus\src;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -92,7 +92,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp14</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -108,7 +109,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp14</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -124,7 +126,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp14</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -140,7 +143,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp14</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -157,12 +161,22 @@
     <Text Include="devblogs\4_shaders.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\shader.cpp" />
+    <ClCompile Include="src\renderer\renderer.cpp" />
+    <ClCompile Include="src\renderer\openGL\indexBuffer.cpp" />
+    <ClCompile Include="src\renderer\openGL\shader.cpp" />
     <ClCompile Include="src\glad.c" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\renderer\openGL\vertexBuffer.cpp" />
+    <ClCompile Include="src\renderer\openGL\vertexArray.cpp" />
+    <ClCompile Include="src\window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\shader.h" />
+    <ClInclude Include="src\renderer\renderer.h" />
+    <ClInclude Include="src\renderer\openGL\indexBuffer.h" />
+    <ClInclude Include="src\renderer\openGL\shader.h" />
+    <ClInclude Include="src\renderer\openGL\vertexBuffer.h" />
+    <ClInclude Include="src\renderer\openGL\vertexArray.h" />
+    <ClInclude Include="src\window.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\shader.fs" />

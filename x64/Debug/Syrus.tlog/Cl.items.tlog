@@ -1,3 +1,8 @@
-C:\dev\Syrus\src\shader.cpp;C:\dev\Syrus\x64\Debug\shader.obj
+C:\dev\Syrus\src\renderer\renderer.cpp;C:\dev\Syrus\x64\Debug\renderer.obj
+C:\dev\Syrus\src\renderer\openGL\indexBuffer.cpp;C:\dev\Syrus\x64\Debug\indexBuffer.obj
+C:\dev\Syrus\src\renderer\openGL\shader.cpp;C:\dev\Syrus\x64\Debug\shader.obj
 C:\dev\Syrus\src\glad.c;C:\dev\Syrus\x64\Debug\glad.obj
 C:\dev\Syrus\src\main.cpp;C:\dev\Syrus\x64\Debug\main.obj
+C:\dev\Syrus\src\renderer\openGL\vertexBuffer.cpp;C:\dev\Syrus\x64\Debug\vertexBuffer.obj
+C:\dev\Syrus\src\renderer\openGL\vertexArray.cpp;C:\dev\Syrus\x64\Debug\vertexArray.obj
+C:\dev\Syrus\src\window.cpp;C:\dev\Syrus\x64\Debug\window.obj
