@@ -155,12 +155,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Text Include="devblogs\2_window.txt" />
-    <Text Include="devblogs\1_glfw_glad_cmake.txt" />
-    <Text Include="devblogs\3_triangle.txt" />
-    <Text Include="devblogs\4_shaders.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="src\renderer\renderer.cpp" />
     <ClCompile Include="src\renderer\openGL\indexBuffer.cpp" />
     <ClCompile Include="src\renderer\openGL\shader.cpp" />
@@ -179,8 +173,8 @@
     <ClInclude Include="src\window.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="src\shader.fs" />
-    <None Include="src\shader.vs" />
+    <None Include="src\shaders\shader.fs" />
+    <None Include="src\shaders\shader.vs" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

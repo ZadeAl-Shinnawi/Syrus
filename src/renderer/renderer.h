@@ -1,3 +1,7 @@
+/**
+ * This class represents a generic renderer which will draw currently bound
+ * objects based on the graphics API specified. Currently only supports OpenGL.
+ */
 #pragma once
 
 #include "openGL/vertexBuffer.h"
@@ -11,11 +15,10 @@ namespace Syrus
 	class Renderer
 	{
 	public:
-		//Renderer();
+		void draw(const VertexBuffer& vbo, const VertexArray& vao,
+			const Shader& shader, GLenum mode = GL_FILL);
 
-		// Render?
-		void draw(const VertexBuffer& vbo, const VertexArray& vao, const Shader& shader);
-		void clear(GLfloat red = 0.0f, GLfloat green = 0.0f, GLfloat blue = 0.0f,
-			GLfloat alpha = 0.0f) const;
+		void clear(GLfloat red = 0.0f, GLfloat green = 0.0f,
+			GLfloat blue = 0.0f, GLfloat alpha = 0.0f) const;
 	};
 }

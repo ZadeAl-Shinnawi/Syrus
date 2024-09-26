@@ -1,8 +1,10 @@
 #include "window.h"
 
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
 #include <iostream>
+#include <cstdlib>
 #include <string>
 
 namespace Syrus
@@ -28,6 +30,13 @@ namespace Syrus
 
         glfwMakeContextCurrent(m_window);
         glfwSetFramebufferSizeCallback(m_window, framebufferSizeCallback);
+
+        // Load OpenGL functions.
+        if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+        {
+            std::cout << "Failed to initialize GLAD" << std::endl;
+            std::exit(EXIT_FAILURE);
+        }
     }
 
     Window::~Window()

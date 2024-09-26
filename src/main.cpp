@@ -4,63 +4,41 @@
 #include "renderer/renderer.h"
 #include "window.h"
 
-#include <glad/glad.h>
-
-#include <iostream>
-#include <cstdlib>
+#include <array>
 
 int main()
 {
     Syrus::Window window(800, 600, "My Window!");
 
-    // Load OpenGL functions.
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-    {
-        std::cout << "Failed to initialize GLAD" << std::endl;
-        std::exit(EXIT_FAILURE);
-    }
+    Syrus::Shader shader("src/shaders/shader.vs", "src/shaders/shader.fs");
 
-    Syrus::Shader shader("src/shader.vs", "src/shader.fs");
-
-    float vertices[] =
+    std::array<float, 18> vertices =
     {
         // Positions.           // Colors.
-         -1.0f, -1.0f, 0.0f,     1.0f, 0.0f, 0.0f,
-          0.0f, -1.0f, 0.0f,     0.0f, 1.0f, 0.0f,
-         -0.5f,  0.0f, 0.0f,     0.0f, 0.0f, 1.0f,
-
-         // Positions.           // Colors.
-         1.0f, 1.0f, 0.0f,     1.0f, 1.0f, 0.0f,
-         0.0f, 1.0f, 0.0f,     1.0f, 0.0f, 1.0f,
-         0.5f, 0.0f, 0.0f,     0.5f, 0.5f, 1.0f
+        -0.5f, -0.5f, 0.0f,     1.0f, 0.0f, 0.0f,
+         0.5f, -0.5f, 0.0f,     0.0f, 1.0f, 0.0f,
+         0.0f,  0.5f, 0.0f,     0.0f, 0.0f, 1.0f
     };
 
     Syrus::VertexBuffer VBO(vertices);
+
+    // Three position floats and three color floats.
     Syrus::VertexArray VAO({ 3, 3 });
-
-    VBO.unbind();
-
-    // Draw wireframe if desired.
-    // glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
     Syrus::Renderer renderer;
 
-    // Render loop
+    // Render loop.
     while (window.isRunning())
     {
         // Handle input.
         window.processInput();
 
-        // Render
+        // Render.
         renderer.clear(1.0f, 1.0f, 0.0f, 1.0f);
-
-        shader.use();
-
-        VAO.bind();
-
-        renderer.draw(VBO, VAO, shader); // bind in fn?
-
+        renderer.draw(VBO, VAO, shader);
         window.swapBuffers();
+
+        // Poll events.
         window.pollEvents();
     }
 

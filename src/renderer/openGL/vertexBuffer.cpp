@@ -7,7 +7,8 @@
 namespace Syrus
 {
 	// Generates a buffer, binds it, and populates it with vertex information.
-	VertexBuffer::VertexBuffer(const std::span<GLfloat>& vertices, GLenum usage)
+	VertexBuffer::VertexBuffer(const std::span<GLfloat>& vertices,
+		GLenum usage)
 	{
 		glGenBuffers(1, &m_ID);
 		glBindBuffer(GL_ARRAY_BUFFER, m_ID);
