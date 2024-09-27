@@ -6,6 +6,7 @@
 
 #include "openGL/vertexBuffer.h"
 #include "openGL/vertexArray.h"
+#include "openGL/indexBuffer.h"
 #include "openGL/shader.h"
 
 #include <glad/glad.h>
@@ -16,7 +17,11 @@ namespace Syrus
 	{
 	public:
 		void draw(const VertexBuffer& vbo, const VertexArray& vao,
-			const Shader& shader, GLenum mode = GL_FILL);
+			const Shader& shader, GLenum mode = GL_FILL) const;
+
+		void draw(const VertexBuffer& vbo, const VertexArray& vao,
+			const IndexBuffer& ibo, const Shader& shader,
+			GLenum mode = GL_FILL) const;
 
 		void clear(GLfloat red = 0.0f, GLfloat green = 0.0f,
 			GLfloat blue = 0.0f, GLfloat alpha = 0.0f) const;

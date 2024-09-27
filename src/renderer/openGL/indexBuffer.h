@@ -14,7 +14,7 @@ namespace Syrus
 	class IndexBuffer
 	{
 	public:
-		IndexBuffer(const std::span<GLfloat>& indices,
+		IndexBuffer(const std::span<GLuint>& indices,
 			GLenum usage = GL_STATIC_DRAW);
 
 		~IndexBuffer();
@@ -23,7 +23,10 @@ namespace Syrus
 
 		void unbind() const;
 
+		inline unsigned int getIndexCount() const { return m_indices.size(); }
+
 	private:
 		GLuint m_ID;
+		std::span<GLuint> m_indices;
 	};
 }

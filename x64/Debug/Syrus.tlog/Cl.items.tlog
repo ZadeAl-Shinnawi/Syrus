@@ -6,3 +6,4 @@ C:\dev\Syrus\src\main.cpp;C:\dev\Syrus\x64\Debug\main.obj
 C:\dev\Syrus\src\renderer\openGL\vertexBuffer.cpp;C:\dev\Syrus\x64\Debug\vertexBuffer.obj
 C:\dev\Syrus\src\renderer\openGL\vertexArray.cpp;C:\dev\Syrus\x64\Debug\vertexArray.obj
 C:\dev\Syrus\src\window.cpp;C:\dev\Syrus\x64\Debug\window.obj
+C:\dev\Syrus\vendor\include\stb_image.cpp;C:\dev\Syrus\x64\Debug\stb_image.obj
