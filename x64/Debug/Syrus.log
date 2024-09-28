@@ -1,5 +1,12 @@
-﻿  main.cpp
-C:\dev\Syrus\src\renderer\openGL\indexBuffer.h(26,68): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
-  (compiling source file 'src/main.cpp')
-  
+﻿  texture.cpp
+  renderer.cpp
+  indexBuffer.cpp
+  shader.cpp
+  main.cpp
+  vertexBuffer.cpp
+  vertexArray.cpp
+  window.cpp
+  stb_image.cpp
+  Generating Code...
+  glad.c
   Syrus.vcxproj -> C:\dev\Syrus\x64\Debug\Syrus.exe
