@@ -8,6 +8,7 @@
 #include <glad/glad.h>
 
 #include <span>
+#include <cstddef>
 
 namespace Syrus
 {
@@ -23,7 +24,7 @@ namespace Syrus
 
 		void unbind() const;
 
-		inline unsigned int getIndexCount() const { return m_indices.size(); }
+		inline std::size_t getIndexCount() const { return m_indices.size(); }
 
 	private:
 		GLuint m_ID;

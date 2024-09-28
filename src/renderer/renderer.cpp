@@ -17,7 +17,8 @@ namespace Syrus
 		shader.use();
 
 		glDrawArrays(GL_TRIANGLES, 0,
-			vbo.getTotalFloats() / vao.getAttributeSum());
+			static_cast<GLsizei>(vbo.getTotalFloats() /
+				vao.getAttributeSum()));
 	}
 
 	void Renderer::draw(const VertexBuffer& vbo, const VertexArray& vao,
@@ -30,8 +31,8 @@ namespace Syrus
 		ibo.bind();
 		shader.use();
 
-		glDrawElements(GL_TRIANGLES, ibo.getIndexCount(), GL_UNSIGNED_INT,
-			nullptr);
+		glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(ibo.getIndexCount()),
+			GL_UNSIGNED_INT, nullptr);
 	}
 
 	void Renderer::clear(GLfloat red, GLfloat green, GLfloat blue,

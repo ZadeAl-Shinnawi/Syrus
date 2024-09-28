@@ -9,6 +9,7 @@
 #include <glad/glad.h>
 
 #include <span>
+#include <cstddef>
 
 namespace Syrus
 {
@@ -25,12 +26,12 @@ namespace Syrus
 		void unbind() const;
 
 		// Returns the total number of floats in the vertex buffer.
-		inline int getTotalFloats() const { return m_numTotalFloats; }
+		inline std::size_t getTotalFloats() const { return m_numTotalFloats; }
 
 	private:
 		GLuint m_ID;
 
 		// The total number of floats in the vertex buffer.
-		int m_numTotalFloats;
+		std::size_t m_numTotalFloats;
 	};
 }

@@ -2,6 +2,7 @@
 
 #include <glad/glad.h>
 
+#include <cstdint>
 #include <numeric>
 #include <iostream>
 #include <initializer_list>
@@ -24,7 +25,7 @@ namespace Syrus
 		{
 			glVertexAttribPointer(i, attribute, GL_FLOAT, GL_FALSE,
 				m_numAttributeFloats * sizeof(float),
-				reinterpret_cast<void*>(offset));
+				reinterpret_cast<void*>(static_cast<std::uintptr_t>(offset)));
 
 			glEnableVertexAttribArray(i);
 
